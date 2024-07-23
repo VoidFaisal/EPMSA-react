@@ -1,0 +1,34 @@
+@media (max-width:640px) {
+    th {
+        font-size:10px;
+        padding:0 3px 0px 3px ;
+        line-height: normal;
+    }
+    td{
+        font-size:10px; 
+        padding:0 3px 0px 3px ;
+    }
+    .apple
+    {
+        width: 5px;
+    }
+    
+}
+.back-ground
+{
+    background-image: url("../assets/images/gradient.jpg");
+    background-size: cover;
+    background-clip: text;
+
+}
+.text-fil
+{
+    -webkit-text-fill-color: transparent;
+}
+.btn
+{
+      --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+    color:white; 
+    
+}
