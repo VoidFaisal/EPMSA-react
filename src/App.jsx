@@ -8,6 +8,7 @@ import DeleteCustomers from "./components/customers/DeleteCustomers"
 import ListProjects from "./components/projects/ListProjects"
 import AddProjects from "./components/projects/AddProjects"
 import EditProjects from "./components/projects/EditProjects"
+import DeleteProjects from "./components/projects/DeleteProjects"
 import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from "react-router-dom"
 function App() {
   const router = createBrowserRouter(
@@ -21,6 +22,7 @@ function App() {
         <Route path="/projects" element={<ListProjects/>}/>
         <Route path="/projects/new" element={<AddProjects/>}/>
         <Route path="/projects/edit/:id" element={<EditProjects/>}/>
+        <Route path="/projects/delete/:id" element={<DeleteProjects/>}/>
         </Route>
     )
   )

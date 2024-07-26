@@ -56,7 +56,8 @@ const AddProjects = () => {
 
       const data = await response.json();
       console.log("Success:", data);
-      navigate("/projects");
+    //   navigate("/projects");
+    alert('Project Added')
     } catch (error) {
       console.log("Error:", error);
     }

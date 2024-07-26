@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Outlet, Link, useNavigate, useParams } from "react-router-dom";
-
+import {formatDate} from "../../helper/Helper.js"
 const EditProjects = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -14,7 +14,8 @@ const EditProjects = () => {
     endDate: "",
     customerId: "",
   });
-
+  
+  
   useEffect(() => {
     const fetchProjectDatabyId = async () => {
       try {
@@ -26,8 +27,12 @@ const EditProjects = () => {
         }
         const data = await response.json();
         setCustomers(data.customers);
-        console.log(data.project.name)
-        console.log(data);
+        setValues({
+            ...data.project,
+            startDate: formatDate(data.project.startDate),
+            endDate: formatDate(data.project.endDate),
+          });
+        console.log(data.project);
         console.log(data.customers);
       } catch (error) {
         console.error("Error fetching project data:", error);
@@ -59,7 +64,7 @@ const EditProjects = () => {
         }
       );
 
-      if (!response.ok) {
+         if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
