@@ -16,15 +16,15 @@ import { Outlet, NavLink,Link } from "react-router-dom";
 
 const navigation = [
   { name: "Customer", href: "customers", current: false },
-  { name: "Project", href: "http://localhost:3000/projects", current: false },
-  { name: "Task", href: "http://localhost:3000/tasks", current: false },
-  { name: "Employee", href: "http://localhost:3000/employees", current: false },
-  { name: "Server", href: "http://localhost:3000/servers", current: false },
-  { name: "Domain", href: "http://localhost:3000/domains", current: false },
-  { name: "Host", href: "http://localhost:3000/hosts", current: false },
+  { name: "Project", href: "projects", current: false },
+  { name: "Task", href: "tasks", current: false },
+  { name: "Employee", href: "employees", current: false },
+  { name: "Server", href: "servers", current: false },
+  { name: "Domain", href: "domains", current: false },
+  { name: "Host", href: "hosts", current: false },
   {
     name: "ProjectExpenses",
-    href: "http://localhost:3000/projectExpenses",
+    href: "projectExpenses",
     current: false,
   },
 ];

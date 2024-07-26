@@ -4,6 +4,10 @@ import Hero from "./components/Hero"
 import Customers from "./components/customers/Customers"
 import AddCustomers from "./components/customers/AddCustomers"
 import EditCustomers from "./components/customers/EditCustomers"
+import DeleteCustomers from "./components/customers/DeleteCustomers"
+import ListProjects from "./components/projects/ListProjects"
+import AddProjects from "./components/projects/AddProjects"
+import EditProjects from "./components/projects/EditProjects"
 import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from "react-router-dom"
 function App() {
   const router = createBrowserRouter(
@@ -12,7 +16,11 @@ function App() {
         <Route index element={<Hero/>}/>
         <Route path="/customers" element={<Customers/>}/>
         <Route path="/customers/new" element={<AddCustomers/>}/>
-        <Route path="/customers/Edit/:id" element={<EditCustomers/>}/>
+        <Route path="/customers/edit/:id" element={<EditCustomers/>}/>
+        <Route path="/customers/delete/:id" element={<DeleteCustomers/>}/>
+        <Route path="/projects" element={<ListProjects/>}/>
+        <Route path="/projects/new" element={<AddProjects/>}/>
+        <Route path="/projects/edit/:id" element={<EditProjects/>}/>
         </Route>
     )
   )

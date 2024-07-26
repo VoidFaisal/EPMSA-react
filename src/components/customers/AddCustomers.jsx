@@ -20,15 +20,15 @@ const AddCustomers = () => {
             },
             body: JSON.stringify(customerData),
           });
+          
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
           setName('');
           setEmail('');
           setPhone('');
           setAddress('');
-          navigate(-1)
-    
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
+          navigate('/customers')
     
           const data = await response.json();
           console.log('Success:', data);
