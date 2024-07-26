@@ -43,7 +43,7 @@ const ListProjects = () => {
       <div className="w-full min-h-screen flex justify-center bg-gray-900 ">
         <div className="w-max h-full">
           <h1 className="text-center py-3 text-white">Projects</h1>
-          
+       
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 table table-auto">
             <thead className="text-xs text-white uppercase bg-gray-600 dark:bg-gray-700 dark:text-gray-400">
               <tr>
