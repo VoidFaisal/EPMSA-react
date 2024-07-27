@@ -5,7 +5,7 @@ import { FaEdit } from "react-icons/fa";
 import "../style.css";
 import {formatDate} from "../../helper/Helper";
 import {DeleteHelper} from "../../helper/DeleteHelper";
-const ListProjects = () => {
+const ListTasks = () => {
         const   [data,setData] = useState([]);
         const [fetchData,setFetchData] = useState(false);
   useEffect(()=>
@@ -14,7 +14,7 @@ const ListProjects = () => {
     {
       try {
        
-        const response  = await fetch("http://localhost:3000/projects")
+        const response  = await fetch("http://localhost:3000/tasks")
       if(!response.ok)
       {
         throw new Error('Network response was not ok');
@@ -30,8 +30,8 @@ const ListProjects = () => {
     handleTableData();
 
   },[fetchData]);
-  const handleDelete = async (projectId) => {
-    const response = await DeleteHelper({ view: "projects", choice: "delete", id: projectId, });
+  const handleDelete = async (taskId) => {
+    const response = await DeleteHelper({ view: "tasks", choice: "delete", id: taskId, });
     console.log(response)
     if(response.msg=="deleted")
     {
@@ -42,21 +42,15 @@ const ListProjects = () => {
     <>
       <div className="w-full min-h-screen flex justify-center bg-gray-900 ">
         <div className="w-max h-full">
-          <h1 className="text-center py-3 text-white">Projects</h1>
+          <h1 className="text-center py-3 text-white">Tasks</h1>
           {data.length>0 ? (<table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 table table-auto">
             <thead className="text-xs text-white uppercase bg-gray-600 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="lg:px-6 lg:py-3">
-                  Project Name
-                </th>
-                <th scope="col" className="lg:px-6 lg:py-3">
-                  Employee ID
+                   Name
                 </th>
                 <th scope="col" className="lg:px-6 lg:py-3">
                   Description
-                </th>
-                <th scope="col" className="lg:px-6 lg:py-3">
-                  Status
                 </th>
                 <th scope="col" className="lg:px-6 lg:py-3">
                   Start Date
@@ -65,7 +59,10 @@ const ListProjects = () => {
                   End Date
                 </th>
                 <th scope="col" className="lg:px-6 lg:py-3">
-                  Customer Name
+                  Status
+                </th>
+                <th scope="col" className="lg:px-6 lg:py-3">
+                  Project
                 </th>
                 <th scope="col" className="lg:px-6 lg:py-3">
                   Action
@@ -80,12 +77,12 @@ const ListProjects = () => {
                 >
                   {data.name}
                 </th>
-                <td className="lg:px-6 lg:py-3">{data.employeeId}</td>
                 <td className="lg:px-6 lg:py-3">{data.description}</td>
-                <td className="lg:px-6 lg:py-3">{data.status}</td>
                 <td className="lg:px-6 lg:py-3">{formatDate(data.startDate)}</td>
                 <td className="lg:px-6 lg:py-3">{formatDate(data.endDate)}</td>
-                <td className="lg:px-6 lg:py-3">{data.customerId.name}</td>
+                <td className="lg:px-6 lg:py-3">{data.status}</td>
+                <td className="lg:px-6 lg:py-3">{data.projectId.name
+                }</td>
                 <td className="lg:px-6 lg:py-3 "><Link to={`edit/${data._id}`}><FaEdit className="cursor-pointer inline-block mr-4 lg:text-normal text-blue-600 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-150 duration-300"/></Link><Link onClick={()=>handleDelete(data._id)}><FaTrashAlt className="cursor-pointer inline-block lg:text-normal text-red-600 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-150 duration-300"/></Link></td>
               </tr>)}
               
@@ -108,4 +105,4 @@ const ListProjects = () => {
   );
 };
 
-export default ListProjects;
+export default ListTasks;
