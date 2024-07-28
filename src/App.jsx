@@ -11,6 +11,12 @@ import EditProjects from "./components/projects/EditProjects"
 import ListTasks from "./components/Tasks/ListTasks"
 import AddTasks from "./components/Tasks/AddTasks"
 import EditTasks from "./components/Tasks/EditTasks"
+import ListEmployee from "./components/Employee/ListEmployee"
+import AddEmployee from "./components/Employee/AddEmployee"
+import ListServers from "./components/Server/ListServers"
+import AddServers from "./components/Server/AddServer"
+import ListDomain from "./components/Domain/ListDomain"
+import AddDomain from "./components/Domain/AddDomains"
 import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from "react-router-dom"
 function App() {
   const router = createBrowserRouter(
@@ -27,6 +33,12 @@ function App() {
         <Route path="/tasks" element={<ListTasks/>}/>
         <Route path="/tasks/new" element={<AddTasks/>}/>
         <Route path="/tasks/edit/:id" element={<EditTasks/>}/>
+        <Route path="/employees" element={<ListEmployee/>}/>
+        <Route path="/employees/new" element={<AddEmployee/>}/>
+        <Route path="/servers" element={<ListServers/>}/>
+        <Route path="/servers/new" element={<AddServers/>}/>
+        <Route path="/domains/" element={<ListDomain/>}/>
+        <Route path="/domains/new" element={<AddDomain/>}/>
         </Route>
     )
   )
