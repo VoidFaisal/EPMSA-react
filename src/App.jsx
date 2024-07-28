@@ -9,6 +9,8 @@ import ListProjects from "./components/projects/ListProjects"
 import AddProjects from "./components/projects/AddProjects"
 import EditProjects from "./components/projects/EditProjects"
 import ListTasks from "./components/Tasks/ListTasks"
+import AddTasks from "./components/Tasks/AddTasks"
+import EditTasks from "./components/Tasks/EditTasks"
 import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from "react-router-dom"
 function App() {
   const router = createBrowserRouter(
@@ -23,6 +25,8 @@ function App() {
         <Route path="/projects/new" element={<AddProjects/>}/>
         <Route path="/projects/edit/:id" element={<EditProjects/>}/>
         <Route path="/tasks" element={<ListTasks/>}/>
+        <Route path="/tasks/new" element={<AddTasks/>}/>
+        <Route path="/tasks/edit/:id" element={<EditTasks/>}/>
         </Route>
     )
   )
