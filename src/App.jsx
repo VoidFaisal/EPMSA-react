@@ -17,6 +17,8 @@ import ListServers from "./components/Server/ListServers"
 import AddServers from "./components/Server/AddServer"
 import ListDomain from "./components/Domain/ListDomain"
 import AddDomain from "./components/Domain/AddDomains"
+import ListHosts from "./components/host/ListHosts"
+import AddHosts from "./components/host/AddHosts"
 import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from "react-router-dom"
 function App() {
   const router = createBrowserRouter(
@@ -39,6 +41,8 @@ function App() {
         <Route path="/servers/new" element={<AddServers/>}/>
         <Route path="/domains/" element={<ListDomain/>}/>
         <Route path="/domains/new" element={<AddDomain/>}/>
+        <Route path="/hosts" element={<ListHosts/>}/>
+        <Route path="/hosts/new" element={<AddHosts/>}/>
         </Route>
     )
   )
