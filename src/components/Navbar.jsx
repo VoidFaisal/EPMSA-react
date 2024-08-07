@@ -23,7 +23,7 @@ const navigation = [
   { name: "Domain", href: "domains", current: false },
   { name: "Host", href: "hosts", current: false },
   {
-    name: "ProjectExpenses",
+    name: "Project Expenses",
     href: "projectExpenses",
     current: false,
   },

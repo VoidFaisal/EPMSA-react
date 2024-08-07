@@ -58,11 +58,11 @@ const Customers = () => {
                   scope="row"
                   className="lg:px-6 lg:py-4 lg:font-medium text-white lg:whitespace-nowrap dark:text-white apple capitalize"
                 >
-                  {data.name}
+                  {data.name?data.name:""}
                 </th>
-                <td className="lg:px-6 lg:py-3">{data.email}</td>
-                <td className="lg:px-6 lg:py-3">{data.phone}</td>
-                <td className="lg:px-6 lg:py-3">{data.address}</td>
+                <td className="lg:px-6 lg:py-3">{data.email?data.email:""}</td>
+                <td className="lg:px-6 lg:py-3">{data.phone?data.phone:""}</td>
+                <td className="lg:px-6 lg:py-3">{data.address?data.address:""}</td>
                 <td className="lg:px-6 lg:py-3 "><Link to={`edit/${data._id}`}><FaEdit className="cursor-pointer inline-block mr-4 lg:text-xl text-blue-600 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300"/></Link><Link to={`delete/${data._id}`}><FaTrashAlt className="cursor-pointer inline-block lg:text-xl text-red-600 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300"/></Link></td>
               </tr>)}
               

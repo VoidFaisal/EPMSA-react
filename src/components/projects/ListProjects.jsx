@@ -78,14 +78,14 @@ const ListProjects = () => {
                   scope="row"
                   className="lg:px-6 lg:py-4 lg:font-medium text-white lg:whitespace-nowrap dark:text-white apple capitalize"
                 >
-                  {data.name}
+                  {data.name?data.name:""}
                 </th>
-                <td className="lg:px-6 lg:py-3">{data.employeeId}</td>
-                <td className="lg:px-6 lg:py-3">{data.description}</td>
-                <td className="lg:px-6 lg:py-3">{data.status}</td>
-                <td className="lg:px-6 lg:py-3">{formatDate(data.startDate)}</td>
-                <td className="lg:px-6 lg:py-3">{formatDate(data.endDate)}</td>
-                <td className="lg:px-6 lg:py-3">{data.customerId.name}</td>
+                <td className="lg:px-6 lg:py-3">{data.employeeId?data.employeeId:""}</td>
+                <td className="lg:px-6 lg:py-3">{data.description?data.description:""}</td>
+                <td className="lg:px-6 lg:py-3">{data.status?data.status:""}</td>
+                <td className="lg:px-6 lg:py-3">{formatDate(data.startDate)?formatDate(data.startDate):""}</td>
+                <td className="lg:px-6 lg:py-3">{formatDate(data.endDate)?formatDate(data.endDate):""}</td>
+                <td className="lg:px-6 lg:py-3">{data.customerId.name?data.customerId.name:""}</td>
                 <td className="lg:px-6 lg:py-3 "><Link to={`edit/${data._id}`}><FaEdit className="cursor-pointer inline-block mr-4 lg:text-normal text-blue-600 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-150 duration-300"/></Link><Link onClick={()=>handleDelete(data._id)}><FaTrashAlt className="cursor-pointer inline-block lg:text-normal text-red-600 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-150 duration-300"/></Link></td>
               </tr>)}
               
